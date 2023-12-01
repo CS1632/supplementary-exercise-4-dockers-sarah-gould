@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: execute
 
     steps:
 
@@ -41,7 +41,7 @@ jobs:
         run: docker-compose up -d
 
       - name: wait command
-        run: /bin/sh wait-for-webserver.sh
+        run: /bin/wait-for-webserver.sh
 
       - name: Run Selenium Tests
         run: cd selenium && mvn test
